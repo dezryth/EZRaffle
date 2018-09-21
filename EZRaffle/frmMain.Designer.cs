@@ -41,7 +41,6 @@
       this.btnLock = new System.Windows.Forms.Button();
       this.tcRaffle = new System.Windows.Forms.TabControl();
       this.tpEnter = new System.Windows.Forms.TabPage();
-      this.lblEmailError = new System.Windows.Forms.Label();
       this.cbEnterContests = new System.Windows.Forms.ComboBox();
       this.gbEntrant = new System.Windows.Forms.GroupBox();
       this.tpView = new System.Windows.Forms.TabPage();
@@ -59,6 +58,7 @@
       this.cbEmail = new System.Windows.Forms.CheckBox();
       this.lblDelete = new System.Windows.Forms.Label();
       this.btnDeleteDB = new System.Windows.Forms.Button();
+      this.tbEmailError = new System.Windows.Forms.TextBox();
       this.tcRaffle.SuspendLayout();
       this.tpEnter.SuspendLayout();
       this.gbEntrant.SuspendLayout();
@@ -134,7 +134,7 @@
       this.tbName.Location = new System.Drawing.Point(362, 65);
       this.tbName.Name = "tbName";
       this.tbName.Size = new System.Drawing.Size(483, 40);
-      this.tbName.TabIndex = 6;
+      this.tbName.TabIndex = 1;
       // 
       // tbPhone
       // 
@@ -142,7 +142,7 @@
       this.tbPhone.Location = new System.Drawing.Point(362, 123);
       this.tbPhone.Name = "tbPhone";
       this.tbPhone.Size = new System.Drawing.Size(483, 40);
-      this.tbPhone.TabIndex = 7;
+      this.tbPhone.TabIndex = 2;
       // 
       // tbEmail
       // 
@@ -150,7 +150,7 @@
       this.tbEmail.Location = new System.Drawing.Point(362, 186);
       this.tbEmail.Name = "tbEmail";
       this.tbEmail.Size = new System.Drawing.Size(483, 40);
-      this.tbEmail.TabIndex = 8;
+      this.tbEmail.TabIndex = 3;
       // 
       // tbNumEntries
       // 
@@ -158,7 +158,7 @@
       this.tbNumEntries.Location = new System.Drawing.Point(362, 247);
       this.tbNumEntries.Name = "tbNumEntries";
       this.tbNumEntries.Size = new System.Drawing.Size(211, 40);
-      this.tbNumEntries.TabIndex = 9;
+      this.tbNumEntries.TabIndex = 4;
       // 
       // btnEnter
       // 
@@ -168,7 +168,7 @@
       this.btnEnter.Location = new System.Drawing.Point(319, 405);
       this.btnEnter.Name = "btnEnter";
       this.btnEnter.Size = new System.Drawing.Size(315, 69);
-      this.btnEnter.TabIndex = 10;
+      this.btnEnter.TabIndex = 5;
       this.btnEnter.Text = "Enter";
       this.btnEnter.UseVisualStyleBackColor = false;
       this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
@@ -178,7 +178,8 @@
       this.btnLock.Location = new System.Drawing.Point(741, 9);
       this.btnLock.Name = "btnLock";
       this.btnLock.Size = new System.Drawing.Size(23, 32);
-      this.btnLock.TabIndex = 11;
+      this.btnLock.TabIndex = 8;
+      this.btnLock.TabStop = false;
       this.btnLock.Text = "🔒";
       this.btnLock.UseVisualStyleBackColor = true;
       this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
@@ -196,11 +197,12 @@
       this.tcRaffle.SelectedIndex = 0;
       this.tcRaffle.Size = new System.Drawing.Size(970, 593);
       this.tcRaffle.TabIndex = 12;
+      this.tcRaffle.TabStop = false;
       this.tcRaffle.SelectedIndexChanged += new System.EventHandler(this.tcRaffle_SelectedIndexChanged);
       // 
       // tpEnter
       // 
-      this.tpEnter.Controls.Add(this.lblEmailError);
+      this.tpEnter.Controls.Add(this.tbEmailError);
       this.tpEnter.Controls.Add(this.cbEnterContests);
       this.tpEnter.Controls.Add(this.gbEntrant);
       this.tpEnter.Controls.Add(this.label1);
@@ -214,22 +216,14 @@
       this.tpEnter.Text = "Enter";
       this.tpEnter.UseVisualStyleBackColor = true;
       // 
-      // lblEmailError
-      // 
-      this.lblEmailError.AutoSize = true;
-      this.lblEmailError.Location = new System.Drawing.Point(350, 477);
-      this.lblEmailError.Name = "lblEmailError";
-      this.lblEmailError.Size = new System.Drawing.Size(15, 24);
-      this.lblEmailError.TabIndex = 14;
-      this.lblEmailError.Text = " ";
-      // 
       // cbEnterContests
       // 
       this.cbEnterContests.FormattingEnabled = true;
       this.cbEnterContests.Location = new System.Drawing.Point(371, 9);
       this.cbEnterContests.Name = "cbEnterContests";
       this.cbEnterContests.Size = new System.Drawing.Size(364, 32);
-      this.cbEnterContests.TabIndex = 13;
+      this.cbEnterContests.TabIndex = 10;
+      this.cbEnterContests.TabStop = false;
       // 
       // gbEntrant
       // 
@@ -253,10 +247,10 @@
       // 
       this.tpView.Controls.Add(this.dgvEntries);
       this.tpView.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tpView.Location = new System.Drawing.Point(4, 22);
+      this.tpView.Location = new System.Drawing.Point(4, 33);
       this.tpView.Name = "tpView";
       this.tpView.Padding = new System.Windows.Forms.Padding(3);
-      this.tpView.Size = new System.Drawing.Size(962, 567);
+      this.tpView.Size = new System.Drawing.Size(962, 556);
       this.tpView.TabIndex = 1;
       this.tpView.Text = "View";
       this.tpView.UseVisualStyleBackColor = true;
@@ -271,7 +265,7 @@
       this.dgvEntries.Location = new System.Drawing.Point(3, 3);
       this.dgvEntries.Name = "dgvEntries";
       this.dgvEntries.ReadOnly = true;
-      this.dgvEntries.Size = new System.Drawing.Size(956, 561);
+      this.dgvEntries.Size = new System.Drawing.Size(956, 550);
       this.dgvEntries.TabIndex = 0;
       // 
       // tpPick
@@ -413,6 +407,15 @@
       this.btnDeleteDB.UseVisualStyleBackColor = true;
       this.btnDeleteDB.Click += new System.EventHandler(this.btnDeleteDB_Click);
       // 
+      // tbEmailError
+      // 
+      this.tbEmailError.Location = new System.Drawing.Point(216, 481);
+      this.tbEmailError.Multiline = true;
+      this.tbEmailError.Name = "tbEmailError";
+      this.tbEmailError.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+      this.tbEmailError.Size = new System.Drawing.Size(519, 67);
+      this.tbEmailError.TabIndex = 13;
+      // 
       // FrmMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,8 +472,8 @@
     private System.Windows.Forms.TabPage tpManage;
     private System.Windows.Forms.Label lblDelete;
     private System.Windows.Forms.Button btnDeleteDB;
-    private System.Windows.Forms.Label lblEmailError;
     private System.Windows.Forms.CheckBox cbEmail;
+    private System.Windows.Forms.TextBox tbEmailError;
   }
 }
 

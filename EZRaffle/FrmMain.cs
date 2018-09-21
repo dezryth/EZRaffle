@@ -114,13 +114,12 @@ namespace EZRaffle
 
           _dbConnection.Close();
 
-          if (cbEmail.Checked)
+          if (cbEmail.Checked && !string.IsNullOrEmpty(tbEmail.Text))
           {
             SendEmail(cbEnterContests.Text, tbEmail.Text, tbName.Text, numEntries);
           }
 
-          if (MessageBox.Show($"{tbName.Text}'s Entries Submitted!") == DialogResult.OK)
-            lblEmailError.Text = "";
+          MessageBox.Show($"{tbName.Text}'s Entries Submitted!");
 
           ClearFields();
         }
@@ -139,13 +138,16 @@ namespace EZRaffle
 
     private void SendEmail(string contest, string email, string name, int numEntries)
     {
-      MailMessage msg = new MailMessage();
-      msg.To.Add(new MailAddress(email, name));
-      msg.From = new MailAddress(Properties.Settings.Default.EmailUser, Properties.Settings.Default.Company);
-      msg.Subject = Properties.Settings.Default.Company + " - Thanks for entering our raffle!";
-      msg.Body = name + ",<br /> " + "<p>You have been entered into our <strong>" + contest + "</strong> raffle with " +
-                 numEntries + " entries!<br />Thanks for participating.<p/>-" + Properties.Settings.Default.Company;
-      msg.IsBodyHtml = true;
+      try
+      {
+        MailMessage msg = new MailMessage();
+        msg.To.Add(new MailAddress(email, name));
+        msg.From = new MailAddress(Properties.Settings.Default.EmailUser, Properties.Settings.Default.Company);
+        msg.Subject = Properties.Settings.Default.Company + " - Thanks for entering our raffle!";
+        msg.Body = name + ",<br /> " + "<p>You have been entered into our <strong>" + contest +
+                   "</strong> raffle with " +
+                   numEntries + " entries!<br />Thanks for participating.<p/>-" + Properties.Settings.Default.Company;
+        msg.IsBodyHtml = true;
 
       SmtpClient client = new SmtpClient
       {
@@ -157,14 +159,13 @@ namespace EZRaffle
         EnableSsl = true
       };
       // You can use Port 25 if 587 is blocked (mine is!)
-      try
-      {
+
         client.Send(msg);
-        lblEmailError.Text = "Email Confirmation Sent Successfully";
+        tbEmailError.Text = "Email Confirmation Sent Successfully";
       }
       catch (Exception ex)
       {
-        lblEmailError.Text = ex.ToString();
+        tbEmailError.Text = ex.ToString();
       }
     }
 
