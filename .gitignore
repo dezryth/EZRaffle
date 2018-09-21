@@ -260,7 +260,7 @@ paket-files/
 __pycache__/
 *.pyc
 
+EZRaffle/App.config
 EZRaffle/Properties/Settings.settings
 EZRaffle/Properties/Settings.Designer.cs
 EZRaffle/Properties/Settings.settings
-
