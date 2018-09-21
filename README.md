@@ -1,4 +1,5 @@
 # EZRaffle
+
 This is an easy to use application for administering raffles.
 
 ## What it does
@@ -10,4 +11,5 @@ Enter entrant's name, email, phone number, and number of entries and the entrant
 I created this program to save time filling out raffle tickets and hopefully you find this useful for your needs.
 
 ## How
+
 EZRaffle is written in C# as a WinForms application that utilizes a lightweight SQLite database contained in the applications folder.
