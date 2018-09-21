@@ -71,6 +71,8 @@
       // 
       // label1
       // 
+      this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label1.Location = new System.Drawing.Point(263, 9);
@@ -130,6 +132,8 @@
       // 
       // tbName
       // 
+      this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tbName.Location = new System.Drawing.Point(362, 65);
       this.tbName.Name = "tbName";
@@ -138,6 +142,8 @@
       // 
       // tbPhone
       // 
+      this.tbPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tbPhone.Location = new System.Drawing.Point(362, 123);
       this.tbPhone.Name = "tbPhone";
@@ -146,6 +152,8 @@
       // 
       // tbEmail
       // 
+      this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tbEmail.Location = new System.Drawing.Point(362, 186);
       this.tbEmail.Name = "tbEmail";
@@ -162,12 +170,14 @@
       // 
       // btnEnter
       // 
+      this.btnEnter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.btnEnter.BackColor = System.Drawing.Color.ForestGreen;
       this.btnEnter.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnEnter.ForeColor = System.Drawing.SystemColors.Control;
       this.btnEnter.Location = new System.Drawing.Point(319, 405);
       this.btnEnter.Name = "btnEnter";
-      this.btnEnter.Size = new System.Drawing.Size(315, 69);
+      this.btnEnter.Size = new System.Drawing.Size(316, 69);
       this.btnEnter.TabIndex = 5;
       this.btnEnter.Text = "Enter";
       this.btnEnter.UseVisualStyleBackColor = false;
@@ -175,9 +185,10 @@
       // 
       // btnLock
       // 
-      this.btnLock.Location = new System.Drawing.Point(741, 9);
+      this.btnLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnLock.Location = new System.Drawing.Point(891, 8);
       this.btnLock.Name = "btnLock";
-      this.btnLock.Size = new System.Drawing.Size(23, 32);
+      this.btnLock.Size = new System.Drawing.Size(51, 32);
       this.btnLock.TabIndex = 8;
       this.btnLock.TabStop = false;
       this.btnLock.Text = "🔒";
@@ -218,15 +229,19 @@
       // 
       // cbEnterContests
       // 
+      this.cbEnterContests.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.cbEnterContests.FormattingEnabled = true;
       this.cbEnterContests.Location = new System.Drawing.Point(371, 9);
       this.cbEnterContests.Name = "cbEnterContests";
-      this.cbEnterContests.Size = new System.Drawing.Size(364, 32);
+      this.cbEnterContests.Size = new System.Drawing.Size(365, 32);
       this.cbEnterContests.TabIndex = 10;
       this.cbEnterContests.TabStop = false;
       // 
       // gbEntrant
       // 
+      this.gbEntrant.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.gbEntrant.Controls.Add(this.tbName);
       this.gbEntrant.Controls.Add(this.tbPhone);
       this.gbEntrant.Controls.Add(this.label5);
@@ -238,7 +253,7 @@
       this.gbEntrant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.gbEntrant.Location = new System.Drawing.Point(23, 41);
       this.gbEntrant.Name = "gbEntrant";
-      this.gbEntrant.Size = new System.Drawing.Size(918, 335);
+      this.gbEntrant.Size = new System.Drawing.Size(919, 335);
       this.gbEntrant.TabIndex = 12;
       this.gbEntrant.TabStop = false;
       this.gbEntrant.Text = "Entrant Details";
@@ -409,11 +424,15 @@
       // 
       // tbEmailError
       // 
+      this.tbEmailError.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.tbEmailError.Enabled = false;
       this.tbEmailError.Location = new System.Drawing.Point(216, 481);
       this.tbEmailError.Multiline = true;
       this.tbEmailError.Name = "tbEmailError";
       this.tbEmailError.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.tbEmailError.Size = new System.Drawing.Size(519, 67);
+      this.tbEmailError.Size = new System.Drawing.Size(520, 67);
       this.tbEmailError.TabIndex = 13;
       // 
       // FrmMain
