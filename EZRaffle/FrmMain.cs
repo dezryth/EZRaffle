@@ -226,7 +226,7 @@ namespace EZRaffle
     {
       if (MessageBox.Show("Did you think about it? Are you sure?", "Are you sure?", MessageBoxButtons.YesNo) ==
           DialogResult.Yes)
-      {
+      {        
         if (File.Exists(Path.Combine(
           Path.GetDirectoryName(Application.ExecutablePath) ?? throw new InvalidOperationException(),
           "EZRaffle.sqlite")))

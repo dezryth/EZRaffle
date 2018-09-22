@@ -274,13 +274,15 @@
       // 
       this.dgvEntries.AllowUserToAddRows = false;
       this.dgvEntries.AllowUserToDeleteRows = false;
-      this.dgvEntries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+      this.dgvEntries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.dgvEntries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
       this.dgvEntries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.dgvEntries.Dock = System.Windows.Forms.DockStyle.Fill;
       this.dgvEntries.Location = new System.Drawing.Point(3, 3);
       this.dgvEntries.Name = "dgvEntries";
       this.dgvEntries.ReadOnly = true;
-      this.dgvEntries.Size = new System.Drawing.Size(956, 550);
+      this.dgvEntries.Size = new System.Drawing.Size(959, 553);
       this.dgvEntries.TabIndex = 0;
       // 
       // tpPick
@@ -414,6 +416,7 @@
       // 
       // btnDeleteDB
       // 
+      this.btnDeleteDB.Enabled = false;
       this.btnDeleteDB.Location = new System.Drawing.Point(9, 116);
       this.btnDeleteDB.Name = "btnDeleteDB";
       this.btnDeleteDB.Size = new System.Drawing.Size(178, 41);
