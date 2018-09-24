@@ -416,7 +416,6 @@
       // 
       // btnDeleteDB
       // 
-      this.btnDeleteDB.Enabled = false;
       this.btnDeleteDB.Location = new System.Drawing.Point(9, 116);
       this.btnDeleteDB.Name = "btnDeleteDB";
       this.btnDeleteDB.Size = new System.Drawing.Size(178, 41);

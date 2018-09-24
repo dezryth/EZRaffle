@@ -224,18 +224,33 @@ namespace EZRaffle
 
     private void btnDeleteDB_Click(object sender, EventArgs e)
     {
-      if (MessageBox.Show("Did you think about it? Are you sure?", "Are you sure?", MessageBoxButtons.YesNo) ==
-          DialogResult.Yes)
+      //if (MessageBox.Show("Did you think about it? Are you sure?", "Are you sure?", MessageBoxButtons.YesNo) ==
+      //    DialogResult.Yes)      
+
+      FrmConfirmDelete confirm = FrmConfirmDelete.GetInstance();
+
+      if(FrmConfirmDelete.openForm != null)
       {        
-        if (File.Exists(Path.Combine(
-          Path.GetDirectoryName(Application.ExecutablePath) ?? throw new InvalidOperationException(),
-          "EZRaffle.sqlite")))
-          File.Delete(Path.Combine(
-            Path.GetDirectoryName(Application.ExecutablePath) ?? throw new InvalidOperationException(),
-            "EZRaffle.sqlite"));
+        confirm.Focus();
       }
 
-      InitializeControls();
+      if (confirm.ShowDialog() == DialogResult.OK)
+      {
+        if (confirm.ConfirmSuccess)
+        {
+          if (File.Exists(Path.Combine(
+            Path.GetDirectoryName(Application.ExecutablePath) ?? throw new InvalidOperationException(),
+            "EZRaffle.sqlite")))
+          {
+            File.Delete(Path.Combine(
+              Path.GetDirectoryName(Application.ExecutablePath) ?? throw new InvalidOperationException(),
+              "EZRaffle.sqlite"));
+            InitializeControls();
+          }
+        }
+
+      }
+      
     }
   }
 }
